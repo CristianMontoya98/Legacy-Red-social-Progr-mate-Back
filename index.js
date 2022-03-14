@@ -4,7 +4,7 @@ const cors = require('cors'); // allow requests from outside resources like post
 const morgan = require('morgan');
 const { logError, errorHandler, wrapError } = require('./utils/middleware/errorHandlers');
 const userRoutes = require('./src/controllers/user.controller')
-const { profilesApi, usersApi, postsApi, commentApi, likeApi, portfolioApi } = require('./src/controllers');
+const { usersApi, postsApi, commentApi, likeApi } = require('./src/controllers');
 const userLogin = require("./src/routes/user.route")
 // Conection MongoDB
 require('./config/database')
