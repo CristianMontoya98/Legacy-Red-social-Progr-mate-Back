@@ -1,0 +1,7 @@
+GET http://localhost:3000/api/users
+
+###
+DELETE http://localhost:3000/api/users/622bba587868d5216032524e
+
+###
+GET http://localhost:3000/api/posts

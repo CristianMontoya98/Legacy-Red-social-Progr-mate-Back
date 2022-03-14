@@ -19,10 +19,6 @@ const postSchema = new Schema({
     trim: true,
     lowercase: true
   },
-  softSkills: {
-    type: Array,
-  }
-  ,
   comments: [{
     type: Schema.Types.ObjectId,
     ref: 'comments'
@@ -30,11 +26,7 @@ const postSchema = new Schema({
   description: {
     type: String
   },
-  profile: {
-    type: String
-  },
-
-  images: {
+  image: {
     type: String,
   },
   company: {

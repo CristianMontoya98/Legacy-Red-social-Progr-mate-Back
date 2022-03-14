@@ -18,6 +18,7 @@ router.route('/:userId').get((req, res) => {
         .then(user => res.json(user))
         .catch(err => res.status(400).json('Error! ' + err))
 })
+
 router.route('/').post((req, res) => {
     const data = req.body;
     const newUser = new User(data)
@@ -33,7 +34,9 @@ router.route('/:userId').delete((req, res) => {
 })
 
 router.route('/:userId').put((req, res) => {
-    User.findByIdAndUpdate(req.params.userId, req.body)
+    const id = Number(req.arams.userId);
+    const body = req.body;
+    User.findByIdAndUpdate({_id:id}, body)
         .then(user => res.json('Success! User updated.'))
         .catch(err => res.status(400).json('Error! ' + err))
 })

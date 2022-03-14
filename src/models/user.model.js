@@ -65,6 +65,35 @@ const userSchema = new Schema({
         require: true
 
     },
+    
+    experience: {
+        type: Array,
+        trim: true,
+    },
+    prev_studes: {
+        type: Array,
+    },
+    description: {
+        type: String,
+        trim: true,
+    },
+    github: {
+        type: String,
+        trim: true,
+        lowercase: true
+    },
+    softSkills: {
+        type: Array,
+    },
+    technicalSkills: {
+        type: Array,
+    },
+    languages: {
+        type: Array
+    },
+    portfolio: {
+        type:Array
+    }
 }, { timestamps: true })
 
 
