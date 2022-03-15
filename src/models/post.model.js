@@ -6,7 +6,7 @@ const postSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  likes1: [{
+  likes: [{
     type: Schema.Types.ObjectId,
     ref: 'likes'
   }],
