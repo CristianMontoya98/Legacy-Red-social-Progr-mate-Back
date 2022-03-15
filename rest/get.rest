@@ -1,7 +1,4 @@
-GET http://localhost:3000/api/users/622fa845b8c30819f8f4f0c7
-
-###
-DELETE http://localhost:3000/api/users/6230ec0affad2539687e77ca
+GET http://localhost:3000/api/users
 
 ###
 GET http://localhost:3000/api/posts
