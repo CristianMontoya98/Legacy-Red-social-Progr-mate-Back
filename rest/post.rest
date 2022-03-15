@@ -38,5 +38,3 @@ Content-Type: application/json
     "portfolio":"link del portafolio"
  }
 
-
-
