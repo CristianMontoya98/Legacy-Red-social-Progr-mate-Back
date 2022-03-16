@@ -87,8 +87,8 @@ const controllerUser = {
       const user = await User.findOne({ email })
 
       const isMatch =
-        // user === null ? false : await bcrypt.compare(password, user.passwordHash)
-        user === null ? false : true
+        user === null ? false : await bcrypt.compare(password, user.passwordHash)
+        /* user === null ? false : true */
       if (!isMatch) {
         res.status(401).json({
           error: 'Invalid password or user'
