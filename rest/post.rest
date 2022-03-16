@@ -1,40 +1,17 @@
-POST http://localhost:3000/api/users
+POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-  "firstName":"Cristian",
-  "middleName":"David",
-  "lastName": "Leon",
-  "secondSurname":"Hernandez",
-  "email":"cristDavid@gmail.com",
-  "contactNumber":"3155299982",
-  "cohorte":{
-    "num":3,
-    "name":"cundicoders"
-    },
-  "passwordHash":"444555",
-  "experience":[
-   {
-    "charge":"Desarrollador junior react",
-    "company":"technoApes",
-    "jobDateInit":"19-05-2021",
-    "jobDateEnd":"19-06-2022",
-    "jobDescription":"desepeño de labores como desarrollador front end con react"
-   }
-  ],
-   "prev_studes":[
-   {
-   "degree":"Tecnologo en sistematización de datos",
-   "institution":"Universidad distrital Francisco José de caldas",
-   "eduDateInit":"20-06-2016",
-   "eduDateEnd":"10-09-2019"
-   }
-    ],
-    "description":"Descripción de mi perfil",
-    "github": "link de github",
-    "softSkills":["liderazgo","comunicación acertiva"],
-    "technicalSkills":["React js", "responsive design"],
-    "languages":["español","english"],
-    "portfolio":"link del portafolio"
- }
-
+"user_info": "6230ec5979724e2290e2ff0c",
+  "likes": "623115ee9d06f82048e1d96a",
+  "title": "Este es un titulo Genial",
+  "type": "Noticia",
+  "comments": "6231150294e5281178b8d36f",
+  "description": "Esta es una descripcion",
+  "image": "Esta es una imagen",
+  "company": "Empresa Gran Compañia SAS",
+  "modality": "Hibrido",
+  "contact": "Marcos Gonzales",
+  "tags": ["Desarrollo", "Programacion"],
+  "technologies": ["React", "Angular"]
+}
