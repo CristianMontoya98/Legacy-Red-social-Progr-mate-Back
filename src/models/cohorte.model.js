@@ -8,11 +8,10 @@ const cohorteSchema = new Schema({
     },
     cohorte_name: {
         type: String,
-        required: true
     }
 }, { timestamps: true })
 
 
-const Cohorte = model('cohorte', cohorteSchema)
+const Cohorte = model('cohortes', cohorteSchema)
 
 module.exports = Cohorte
