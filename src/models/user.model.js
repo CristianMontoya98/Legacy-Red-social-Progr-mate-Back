@@ -45,15 +45,8 @@ const userSchema = new Schema({
     },
 
     cohorte: {
-        num: {
-            type: Number,
-            require: true
-        },
-        name: {
-            type: String,
-            require: true
-        }
-
+        type: Schema.Types.ObjectId,
+        ref: "cohortes"
     },
     state: {
         type: Boolean,

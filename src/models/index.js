@@ -3,4 +3,6 @@
 const users = require("./user.model")
 const posts = require("./post.model")
 const comment = require('./comment.model')
-module.exports = { rsprofiles, users, posts, comment };
+const cohorte = require('./cohorte.model')
+
+module.exports = { rsprofiles, users, posts, comment, cohorte };

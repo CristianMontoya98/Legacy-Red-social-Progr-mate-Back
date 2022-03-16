@@ -1,17 +1,7 @@
-POST http://localhost:3000/api/posts
+POST http://localhost:3000/api/cohorte
 Content-Type: application/json
 
 {
-"user_info": "6230ec5979724e2290e2ff0c",
-  "likes": "623115ee9d06f82048e1d96a",
-  "title": "Este es un titulo Genial",
-  "type": "Noticia",
-  "comments": "6231150294e5281178b8d36f",
-  "description": "Esta es una descripcion",
-  "image": "Esta es una imagen",
-  "company": "Empresa Gran Compañia SAS",
-  "modality": "Hibrido",
-  "contact": "Marcos Gonzales",
-  "tags": ["Desarrollo", "Programacion"],
-  "technologies": ["React", "Angular"]
+  "cohorte": 4,
+  "cohorte_name":"Ultimate Foursteen"
 }
