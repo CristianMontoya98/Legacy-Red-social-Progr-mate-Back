@@ -1,7 +1,8 @@
 
-PUT http://localhost:3000/api/users/622fa845b8c30819f8f4f0c7
+PUT http://localhost:3000/api/cohorte/62320a5653cd2c2310701adb
 Content-Type: application/json
 
 {
- "firstName":"Cristian"
+  "cohorte_name":"FreedomDevelopers"
 }
+

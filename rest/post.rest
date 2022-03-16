@@ -1,40 +1,7 @@
-POST http://localhost:3000/api/users
+POST http://localhost:3000/api/cohorte
 Content-Type: application/json
 
 {
-  "firstName":"Cristian",
-  "middleName":"David",
-  "lastName": "Leon",
-  "secondSurname":"Hernandez",
-  "email":"cristDavid@gmail.com",
-  "contactNumber":"3155299982",
-  "cohorte":{
-    "num":3,
-    "name":"cundicoders"
-    },
-  "passwordHash":"444555",
-  "experience":[
-   {
-    "charge":"Desarrollador junior react",
-    "company":"technoApes",
-    "jobDateInit":"19-05-2021",
-    "jobDateEnd":"19-06-2022",
-    "jobDescription":"desepeño de labores como desarrollador front end con react"
-   }
-  ],
-   "prev_studes":[
-   {
-   "degree":"Tecnologo en sistematización de datos",
-   "institution":"Universidad distrital Francisco José de caldas",
-   "eduDateInit":"20-06-2016",
-   "eduDateEnd":"10-09-2019"
-   }
-    ],
-    "description":"Descripción de mi perfil",
-    "github": "link de github",
-    "softSkills":["liderazgo","comunicación acertiva"],
-    "technicalSkills":["React js", "responsive design"],
-    "languages":["español","english"],
-    "portfolio":"link del portafolio"
- }
-
+  "cohorte": 4,
+  "cohorte_name":"Ultimate Foursteen"
+}

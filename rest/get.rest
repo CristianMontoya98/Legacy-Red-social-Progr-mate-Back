@@ -1,4 +1,10 @@
-GET http://localhost:3000/api/users
+GET http://localhost:3000/api/cohorte/6232081e53cd2c2310701acf
 
 ###
-GET http://localhost:3000/api/posts
+GET http://localhost:3000/api/users
+
+{
+  "cohorte": 4,
+  "cohorte_name":"Ultimate Foursteen"
+}
+
