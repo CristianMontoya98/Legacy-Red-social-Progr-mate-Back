@@ -1,8 +1,6 @@
-
-PUT http://localhost:3000/api/cohorte/62320a5653cd2c2310701adb
+PUT http://localhost:3000/api/users/62335a609ab16f29d028359f
 Content-Type: application/json
 
 {
-  "cohorte_name":"FreedomDevelopers"
+  "lastName": "Estupiñan"
 }
-

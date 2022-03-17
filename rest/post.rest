@@ -1,7 +1,16 @@
-POST http://localhost:3000/api/cohorte
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
-{
-  "cohorte": 4,
-  "cohorte_name":"Ultimate Foursteen"
-}
+  {
+    "firstName": "Laura",
+    "middleName": "Daniela",
+    "lastName": "Vargas",
+    "secondSurname": "Hidalgo",
+    "email": "danielet16@hotmail.com",
+    "contactNumber": "3144695811",
+    "rol": "0",
+    "program": "programate",
+    "cohorte": "62320a5653cd2c2310701adb",
+    "state": "true",
+    "passwordHash": "programate2022"
+  }
