@@ -24,6 +24,7 @@ router.route('/').post((req, res) => {
     newUser.save()
         .then(user => res.json(user))
         .catch(err => res.status(400).json("Error! " + err))
+
 })
 
 router.route('/:userId').delete((req, res) => {
