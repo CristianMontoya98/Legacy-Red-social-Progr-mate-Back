@@ -1,1 +1,1 @@
-DELETE http://localhost:3000/api/comments/622faa19b8c30819f8f4f0cb
+DELETE http://localhost:3000/api/likes/623115ee9d06f82048e1d96a

@@ -1,16 +1,9 @@
-POST http://localhost:3000/api/users
+POST http://localhost:3000/api/login
 Content-Type: application/json
 
-  {
-    "firstName": "Laura",
-    "middleName": "Daniela",
-    "lastName": "Vargas",
-    "secondSurname": "Hidalgo",
-    "email": "danielet16@hotmail.com",
-    "contactNumber": "3144695811",
-    "rol": "0",
-    "program": "programate",
-    "cohorte": "62320a5653cd2c2310701adb",
-    "state": "true",
-    "passwordHash": "programate2022"
+{
+    "email":"lnlugof@gmail.com",
+    "password":"programate2022"
   }
+
+
