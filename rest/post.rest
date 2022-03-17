@@ -1,7 +1,16 @@
-POST http://localhost:3000/api/cohorte
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
-{
-  "cohorte": 4,
-  "cohorte_name":"Ultimate Foursteen"
-}
+    {
+        "firstName": "Sebastián",
+        "middleName": "",
+        "lastName": "Ocampo",
+        "secondSurname": "López",
+        "email": "sebastianocampolopez507@gmail.com",
+        "contactNumber": "3108342073",
+        "rol": "0",
+        "program": "programate",
+        "cohorte": "6232080e53cd2c2310701acd",
+        "state": "true",
+        "passwordHash": "programate2022"
+    }

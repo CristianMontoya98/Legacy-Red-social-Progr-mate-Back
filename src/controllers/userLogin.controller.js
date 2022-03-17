@@ -110,6 +110,7 @@ const controllerUser = {
       return res.status(500).json({ msg: err.message })
     }
   },
+  
   getAccessToken: (req, res) => {
     try {
       console.log(req.body.refreshtoken)
