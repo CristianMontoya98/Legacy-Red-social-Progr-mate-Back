@@ -1,7 +1,9 @@
-POST http://localhost:3000/api/cohorte
+POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-  "cohorte": 4,
-  "cohorte_name":"Ultimate Foursteen"
-}
+    "email":"lnlugof@gmail.com",
+    "password":"programate2022"
+  }
+
+

@@ -83,6 +83,7 @@ const controllerUser = {
   //Revisar que enviar importante.
   login: async (req, res) => {
     try {
+      
       const { email, password } = req.body
       const user = await User.findOne({ email })
 
@@ -107,6 +108,7 @@ const controllerUser = {
 
     } catch (err) {
       return res.status(500).json({ msg: err.message })
+      
     }
   },
   getAccessToken: (req, res) => {
