@@ -86,7 +86,7 @@ const controllerUser = {
       
       const { email, password } = req.body
       const user = await User.findOne({ email })
-
+      
       const isMatch =
         user === null ? false : password === user.passwordHash
         /* user === null ? false : await bcrypt.compare(password, user.passwordHash) */
@@ -189,6 +189,7 @@ const controllerUser = {
   //     return res.status(500).json({ msg: err.message })
   //   }
   // },
+  
   updateUsersRole: async (req, res) => {
     try {
       const { role } = req.body
