@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema({
     firstName: {
         type: String,
-        required: true,
+        require: true,
         maxlength: 45
     },
     middleName: {
@@ -12,7 +12,7 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        required: true,
+        require: true,
         maxlength: 45
     },
     secondSurname: {
@@ -56,13 +56,13 @@ const userSchema = new Schema({
     passwordHash: {
         type: String,
         require: true
-
     },
     
     experience: {
         type: Array,
         trim: true,
     },
+
     prev_studes: {
         type: Array,
     },
