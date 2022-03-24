@@ -85,7 +85,7 @@ const userSchema = new Schema({
         type: Array
     },
     portfolio: {
-        type:Array
+        type:String
     }
 }, { timestamps: true })
 

@@ -6,4 +6,13 @@ Content-Type: application/json
     "password":"programate2022"
   }
 
+###
+POST http://localhost:3000/api/likes
+Content-Type: application/json
+
+{
+   "like": 1,
+   "user_id": "62327181451d890bc8e86cd2"
+  }
+
 
