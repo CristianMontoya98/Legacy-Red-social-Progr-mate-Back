@@ -6,80 +6,80 @@ const sendMail = require('./sent.controller')
 const { CLIENT_URL } = process.env
 
 const controllerUser = {
-  registerAdmin: async (req, res) => {
-    try {
-      console.log(req.body)
-      const { firstName, password,
-        email,
-        middleName,
-        lastName,
-        secondSurname,
-        contactNumber,
-        avatar,
-        rol,
-        program,
-        cohorte,
-        state } = req.body
+  // registerAdmin: async (req, res) => {
+  //   try {
+  //     console.log(req.body)
+  //     const { firstName, password,
+  //       email,
+  //       middleName,
+  //       lastName,
+  //       secondSurname,
+  //       contactNumber,
+  //       avatar,
+  //       rol,
+  //       program,
+  //       cohorte,
+  //       state } = req.body
 
-      // if (!firstName || !email || !password || !rol)
-      //   return res.status(400).json({ msg: "Please fill in all fields." })
+  //     // if (!firstName || !email || !password || !rol)
+  //     //   return res.status(400).json({ msg: "Please fill in all fields." })
 
-      if (!validateEmail(email))
-        return res.status(400).json({ msg: "Invalid emails." })
+  //     if (!validateEmail(email))
+  //       return res.status(400).json({ msg: "Invalid emails." })
 
-      const user = await User.findOne({ email })
+  //     const user = await User.findOne({ email })
 
-      if (user) return res.status(400).json({ msg: "This email already exists." })
+  //     if (user) return res.status(400).json({ msg: "This email already exists." })
 
-      if (password.length < 6)
-        return res.status(400).json({ msg: "Password must be at least 6 characters." })
+  //     if (password.length < 6)
+  //       return res.status(400).json({ msg: "Password must be at least 6 characters." })
 
-      const passwordHash = await bcrypt .hash(password, 12)
+  //     const passwordHash = await bcrypt .hash(password, 12)
 
-      const newUser = new User({
-        firstName, passwordHash,
-        middleName,
-        lastName,
-        secondSurname,
-        email,
-        contactNumber,
-        avatar,
-        rol,
-        program,
-        cohorte,
-        state
-      })
+  //     const newUser = new User({
+  //       firstName, passwordHash,
+  //       middleName,
+  //       lastName,
+  //       secondSurname,
+  //       email,
+  //       contactNumber,
+  //       avatar,
+  //       rol,
+  //       program,
+  //       cohorte,
+  //       state
+  //     })
 
 
-      await newUser.save()
-      res.json({ msg: "User has been create!" })
+  //     await newUser.save()
+  //     res.json({ msg: "User has been create!" })
 
-    } catch (err) {
-      return res.status(500).json({ msg: err.message })
-    }
-  },
-  activateEmail: async (req, res) => {
-    try {
-      const { activation_token } = req.body
-      const user = jwt.verify(activation_token, process.env.ACTIVATION_TOKEN_SECRET)
+  //   } catch (err) {
+  //     return res.status(500).json({ msg: err.message })
+  //   }
+  // },
+  // activateEmail: async (req, res) => {
+  //   try {
+  //     const { activation_token } = req.body
+  //     const user = jwt.verify(activation_token, process.env.ACTIVATION_TOKEN_SECRET)
 
-      const { name, email, passwordHash } = user
+  //     const { name, email, passwordHash } = user
 
-      const check = await User.findOne({ email })
-      if (check) return res.status(400).json({ msg: "This email already exists." })
+  //     const check = await User.findOne({ email })
+  //     if (check) return res.status(400).json({ msg: "This email already exists." })
 
-      const newUser = new User({
-        name, email, passwordHash
-      })
+  //     const newUser = new User({
+  //       name, email, passwordHash
+  //     })
 
-      await newUser.save()
+  //     await newUser.save()
 
-      res.json({ msg: "Account has been activated!" })
+  //     res.json({ msg: "Account has been activated!" })
 
-    } catch (err) {
-      return res.status(500).json({ msg: err.message })
-    }
-  },
+  //   } catch (err) {
+  //     //return res.status(500).json({ msg: err.message })
+  //   }
+  // },
   //Revisar que enviar importante.
   login: async (req, res) => {
     try {
@@ -88,7 +88,7 @@ const controllerUser = {
 
       const isMatch =
         // user === null ? false : await bcrypt.compare(password, user.passwordHash)
-        user === null ? false : true
+        user === null ? false : password == user.passwordHash
       if (!isMatch) {
         res.status(401).json({
           error: 'Invalid password or user'
@@ -107,7 +107,7 @@ const controllerUser = {
       })
 
     } catch (err) {
-      return res.status(500).json({ msg: err.message })
+      //return res.status(500).json({ msg: err.message })
     }
   },
   getAccessToken: (req, res) => {
