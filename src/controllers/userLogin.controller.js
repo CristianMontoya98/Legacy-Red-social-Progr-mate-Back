@@ -92,7 +92,7 @@ const controllerUser = {
         /* user === null ? false : await bcrypt.compare(password, user.passwordHash) */
         /* user === null ? false : true */
       if (!isMatch) {
-        res.status(401).json({
+        return res.status(401).json({
           error: 'Invalid password or user'
         })
       }
