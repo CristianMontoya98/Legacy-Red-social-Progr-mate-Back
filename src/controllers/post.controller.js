@@ -49,7 +49,7 @@ router.route('/like/:postId').post((req, res) => {
   //in this part we are going to create a new endpoint to added the like into the post
   //Save the body information in a variable to create a new document in notifications collection
   let notificationData = req.body
-  notificationData["idPost"] = req.params.postId 
+  notificationData["idPost"] = req.params.postId
   notificationData["text"] = "Ha dado like a tu publicación"
 
   console.log(Post.find())
@@ -61,7 +61,7 @@ router.route('/like/:postId').post((req, res) => {
         .then(post => res.json(post))
         .catch(err => res.status(400).json('Error! ' + err))
     })
-    /* Notification.create(notificationData) */
+    Notification.create(notificationData)
 })
 
 
