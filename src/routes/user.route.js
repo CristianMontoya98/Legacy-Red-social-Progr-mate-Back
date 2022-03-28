@@ -21,12 +21,4 @@ router.get('/all_info', auth, authAdmin, controllerUser.getUsersAllInfor)
 
 router.get('/logout', controllerUser.logout)
 
-
-// router.patch('/update', auth, controllerUser.updateUser)
-
-//  router.patch('/update_role/:id', auth, authAdmin, controllerUser.updateUsersRole)
-
-//  router.delete('/delete/:id', auth, authAdmin, controllerUser.deleteUser)
-
-
 module.exports = router

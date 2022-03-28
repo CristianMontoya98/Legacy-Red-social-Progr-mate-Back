@@ -1,7 +1,7 @@
 
-PUT http://localhost:3000/api/users/623a00bc13088506744c85b2
+PUT http://localhost:3000/api/users/62327181451d890bc8e86cd2
 Content-Type: application/json
 
 {
-  "cohorte": "6232081e53cd2c2310701acf"
+  "firstName": "Laura"
 }
