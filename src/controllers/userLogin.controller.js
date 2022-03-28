@@ -83,12 +83,14 @@ const controllerUser = {
   //Revisar que enviar importante.
   login: async (req, res) => {
     try {
+      
       const { email, password } = req.body
       const user = await User.findOne({ email })
-
+      
       const isMatch =
-        // user === null ? false : await bcrypt.compare(password, user.passwordHash)
-        user === null ? false : password == user.passwordHash
+        user === null ? false : password === user.passwordHash
+        /* user === null ? false : await bcrypt.compare(password, user.passwordHash) */
+        /* user === null ? false : true */
       if (!isMatch) {
         res.status(401).json({
           error: 'Invalid password or user'
@@ -96,8 +98,6 @@ const controllerUser = {
       }
 
       const refresh_token = createRefreshToken({ id: user._id })
-
-
 
       res.send({
         email: user.email,
@@ -107,7 +107,8 @@ const controllerUser = {
       })
 
     } catch (err) {
-      //return res.status(500).json({ msg: err.message })
+      return res.status(500).json({ msg: err.message })
+      
     }
   },
   getAccessToken: (req, res) => {
@@ -187,6 +188,7 @@ const controllerUser = {
   //     return res.status(500).json({ msg: err.message })
   //   }
   // },
+  
   updateUsersRole: async (req, res) => {
     try {
       const { role } = req.body
@@ -221,7 +223,6 @@ const controllerUser = {
   // },
 
 }
-
 
 const validateEmail = (email) => {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

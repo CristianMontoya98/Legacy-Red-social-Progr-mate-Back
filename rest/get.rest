@@ -1,10 +1,9 @@
-GET http://localhost:3000/api/cohorte/6232081e53cd2c2310701acf
+GET http://localhost:3000/api/notifications
 
 ###
-GET http://localhost:3000/api/users
+GET http://localhost:3000/api/users/62327c184569ba18f80798a7
 
 {
   "cohorte": 4,
   "cohorte_name":"Ultimate Foursteen"
 }
-

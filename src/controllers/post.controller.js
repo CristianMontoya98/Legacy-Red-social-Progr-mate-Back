@@ -2,6 +2,7 @@
 const Post = require('../models/post.model');
 const Comment = require('../models/comment.model');
 const Like = require('../models/like.model');
+const Notification = require('../models/notification.model')
 const router = require('express').Router();
 
 
@@ -30,6 +31,9 @@ router.route('/').post((req, res) => {
 //Creating comments into Post
 router.route('/comment/:postId').post((req, res) => {
   //in this part we are going to create a new endpoint to added the comment into the post
+  let notificationData = req.body
+  notificationData["idPost"] = req.params.postId 
+  notificationData["text"] = "Ha comentado tu publicación"
 
   Comment.create(req.body)
     .then((comment) => {
@@ -39,10 +43,16 @@ router.route('/comment/:postId').post((req, res) => {
         .then(post => res.json(post))
         .catch(err => res.status(400).json('Error! ' + err))
     })
+    Notification.create(notificationData)
 })
 router.route('/like/:postId').post((req, res) => {
-  //in this part we are going to create a new endpoint to added the comment into the post
+  //in this part we are going to create a new endpoint to added the like into the post
+  //Save the body information in a variable to create a new document in notifications collection
+  let notificationData = req.body
+  notificationData["idPost"] = req.params.postId 
+  notificationData["text"] = "Ha dado like a tu publicación"
 
+  console.log(Post.find())
   Like.create(req.body)
     .then((like) => {
       //if a comment was created succesfully, let's go to find one (findOne)post with an _id equal to req.params.postId. Update is for our post in order to be associdated with a new comment 
@@ -51,6 +61,7 @@ router.route('/like/:postId').post((req, res) => {
         .then(post => res.json(post))
         .catch(err => res.status(400).json('Error! ' + err))
     })
+    /* Notification.create(notificationData) */
 })
 
 

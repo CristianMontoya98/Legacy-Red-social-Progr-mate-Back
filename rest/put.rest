@@ -3,5 +3,6 @@ PUT http://localhost:3000/api/users/623279234569ba18f807988d
 Content-Type: application/json
 
 {
-  "rol": 0,
+  "rol": 9
+}
 

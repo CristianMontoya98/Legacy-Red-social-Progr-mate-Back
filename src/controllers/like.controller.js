@@ -2,8 +2,6 @@
 const Like = require('../models/like.model');
 const router = require('express').Router();
 
-
-
 router.route('/').get((req, res) => {
   Like.find()
     .then(allLikes => res.json(allLikes))
@@ -14,9 +12,10 @@ router.route('/:likeId').get((req, res) => {
     .then(like => res.json(like))
     .catch(err => res.status(400).json('Error! ' + err))
 })
+
 router.route('/').post((req, res) => {
   const newLike = new Like(req.body)
-
+  console.log(req.body)
   newLike.save()
     .then(like => res.json(like))
     .catch(err => res.status(400).json("Error! " + err))

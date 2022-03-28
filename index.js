@@ -4,7 +4,7 @@ const cors = require('cors'); // allow requests from outside resources like post
 const morgan = require('morgan');
 const { logError, errorHandler, wrapError } = require('./utils/middleware/errorHandlers');
 const userRoutes = require('./src/controllers/user.controller')
-const { usersApi, postsApi, commentApi, likeApi, cohorteApi } = require('./src/controllers');
+const { usersApi, postsApi, commentApi, likeApi, cohorteApi, notificationsApi } = require('./src/controllers');
 const userLogin = require("./src/routes/user.route")
 // Conection MongoDB
 require('./config/database')
@@ -22,12 +22,12 @@ app.use(errorHandler);
 // routes
 app.use('/api/users', usersApi)
 
-/* app.use('/api/profiles', profilesApi) */
+
 app.use('/api/cohorte', cohorteApi)
 app.use('/api/likes', likeApi)
 app.use('/api/posts', postsApi)
 app.use('/api/comments', commentApi)
-/* app.use('/api/portfolios', portfolioApi) */
+app.use('/api/notifications', notificationsApi)
 app.use('/api', userLogin)
 
 const PORT = process.env.PORT || 5000

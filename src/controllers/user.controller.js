@@ -5,7 +5,7 @@ const router = require('express').Router()
 router.route('/').get((req, res) => {
     // using .find() without a paramter will match on all user instances
     const query = req.query ? req.query : []
-    console.log(query)
+    
     User.find(query)
         .then(allUsers => res.json(allUsers))
         .catch(err => res.status(400).json('Error! ' + err))
@@ -24,6 +24,7 @@ router.route('/').post((req, res) => {
     newUser.save()
         .then(user => res.json(user))
         .catch(err => res.status(400).json("Error! " + err))
+
 })
 
 router.route('/:userId').delete((req, res) => {
