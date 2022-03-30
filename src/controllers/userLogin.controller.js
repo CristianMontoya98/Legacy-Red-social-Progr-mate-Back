@@ -101,6 +101,7 @@ const controllerUser = {
 
       res.send({
         email: user.email,
+        id: user._id,
         refresh_token,
         msg: "Login success!"
 
