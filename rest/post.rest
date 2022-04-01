@@ -1,9 +1,13 @@
-POST http://localhost:3000/api/login
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "email":"lnlugof@gmail.com",
-    "password":"programate2022"
+    "firstname":"Pablo",
+    "lastName":"Perez",
+    "email":"pablo@gmail.com",
+    "contactNumber":4455,
+    "passwordHash":"444",
+    "rol":9
   }
 
 ###
