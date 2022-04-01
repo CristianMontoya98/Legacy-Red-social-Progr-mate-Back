@@ -6,81 +6,7 @@ const sendMail = require('./sent.controller')
 const { CLIENT_URL } = process.env
 
 const controllerUser = {
-  // registerAdmin: async (req, res) => {
-  //   try {
-  //     console.log(req.body)
-  //     const { firstName, password,
-  //       email,
-  //       middleName,
-  //       lastName,
-  //       secondSurname,
-  //       contactNumber,
-  //       avatar,
-  //       rol,
-  //       program,
-  //       cohorte,
-  //       state } = req.body
 
-  //     // if (!firstName || !email || !password || !rol)
-  //     //   return res.status(400).json({ msg: "Please fill in all fields." })
-
-  //     if (!validateEmail(email))
-  //       return res.status(400).json({ msg: "Invalid emails." })
-
-  //     const user = await User.findOne({ email })
-
-  //     if (user) return res.status(400).json({ msg: "This email already exists." })
-
-  //     if (password.length < 6)
-  //       return res.status(400).json({ msg: "Password must be at least 6 characters." })
-
-  //     const passwordHash = await bcrypt .hash(password, 12)
-
-  //     const newUser = new User({
-  //       firstName, passwordHash,
-  //       middleName,
-  //       lastName,
-  //       secondSurname,
-  //       email,
-  //       contactNumber,
-  //       avatar,
-  //       rol,
-  //       program,
-  //       cohorte,
-  //       state
-  //     })
-
-
-  //     await newUser.save()
-  //     res.json({ msg: "User has been create!" })
-
-  //   } catch (err) {
-  //     return res.status(500).json({ msg: err.message })
-  //   }
-  // },
-  // activateEmail: async (req, res) => {
-  //   try {
-  //     const { activation_token } = req.body
-  //     const user = jwt.verify(activation_token, process.env.ACTIVATION_TOKEN_SECRET)
-
-  //     const { name, email, passwordHash } = user
-
-  //     const check = await User.findOne({ email })
-  //     if (check) return res.status(400).json({ msg: "This email already exists." })
-
-  //     const newUser = new User({
-  //       name, email, passwordHash
-  //     })
-
-  //     await newUser.save()
-
-  //     res.json({ msg: "Account has been activated!" })
-
-  //   } catch (err) {
-  //     //return res.status(500).json({ msg: err.message })
-  //   }
-  // },
-  //Revisar que enviar importante.
   login: async (req, res) => {
     try {
       
@@ -88,8 +14,8 @@ const controllerUser = {
       const user = await User.findOne({ email })
       
       const isMatch =
-        user === null ? false : password === user.passwordHash
-        /* user === null ? false : await bcrypt.compare(password, user.passwordHash) */
+        /* user === null ? false : password === user.passwordHash */
+        user === null ? false : await bcrypt.compare(password, user.passwordHash)
         /* user === null ? false : true */
       if (!isMatch) {
         return res.status(401).json({
@@ -101,6 +27,7 @@ const controllerUser = {
 
       res.send({
         email: user.email,
+        id: user._id,
         refresh_token,
         msg: "Login success!"
 
@@ -176,19 +103,6 @@ const controllerUser = {
     }
   },
 
-  // updateUser: async (req, res) => {
-  //   try {
-  //     const { name, avatar } = req.body
-  //     await User.findOneAndUpdate({ _id: req.user.id }, {
-  //       name, avatar
-  //     })
-
-  //     res.json({ msg: "Update Success!" })
-  //   } catch (err) {
-  //     return res.status(500).json({ msg: err.message })
-  //   }
-  // },
-  
   updateUsersRole: async (req, res) => {
     try {
       const { role } = req.body
@@ -211,16 +125,6 @@ const controllerUser = {
 
     }
   }
-  // ,
-  // deleteUser: async (req, res) => {
-  //   try {
-  //     await User.findByIdAndDelete(req.params.id)
-
-  //     res.json({ msg: "Deleted Success!" })
-  //   } catch (err) {
-  //     return res.status(500).json({ msg: err.message })
-  //   }
-  // },
 
 }
 

@@ -1,7 +1,7 @@
 // user controller
 const User = require('../models/user.model')
 const router = require('express').Router()
-
+const bcrypt = require('bcrypt')
 router.route('/').get((req, res) => {
     // using .find() without a paramter will match on all user instances
     const query = req.query ? req.query : []
@@ -19,12 +19,23 @@ router.route('/:userId').get((req, res) => {
 
 router.route('/').post((req, res) => {
     const data = req.body;
-    const newUser = new User(data)
-
-    newUser.save()
-        .then(user => res.json(user))
-        .catch(err => res.status(400).json("Error! " + err))
-
+    let password;
+    
+    const encrypt =  () =>{
+        password = bcrypt.hash(data.passwordHash, 12, function (err, hash) {
+            const newObject = {
+                ...data,
+                "passwordHash":hash
+            }
+            const newUser = new User(newObject)
+            newUser.save()
+                .then(user => res.json(user))
+                .catch(err => res.status(400).json("Error! " + err))
+        })
+    }
+    encrypt();
+    
+    
 })
 
 router.route('/:userId').delete((req, res) => {
