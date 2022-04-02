@@ -1,5 +1,7 @@
 # RED SOCIAL CODERY
+
 ![logo](https://raw.githubusercontent.com/CristianMontoya98/Legacy-Red-social-Progr-mate/4f6ddfdc42841b5756285afde485ddf0eb331458/src/assets/images/logo.svg)
+
 This project allows to create and maintain a solid community between trainers, students and ex students of the "Prográmate" Bootcamp dictated by the Educamás Foundation. Its main objective is to keep them in touch by sharing valuable and important information about web development, job offers, upcoming events and even programming tips.
 Besides, a question and answer section was enabled for persons who prefer to debate with the “Prográmate” community, instead of getting  information of internet pages.
 
