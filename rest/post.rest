@@ -1,14 +1,11 @@
-POST http://localhost:3000/api/users
+POST http://165.227.97.133/api/login
 Content-Type: application/json
 
 {
-    "firstname":"Pablo",
-    "lastName":"Perez",
-    "email":"pablo@gmail.com",
-    "contactNumber":4455,
-    "passwordHash":"444",
-    "rol":9
+  "email":"pope@gmail.com",
+  "passwordHash":"666"
   }
+
 
 ###
 POST http://localhost:3000/api/likes

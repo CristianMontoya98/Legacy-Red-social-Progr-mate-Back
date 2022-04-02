@@ -20,7 +20,8 @@ router.route('/:userId').get((req, res) => {
 router.route('/').post((req, res) => {
     const data = req.body;
     let password;
-    
+    /* Function to encrypt the password and save in an object with the other atributes recieved in req
+    wich is send to the database */
     const encrypt =  () =>{
         password = bcrypt.hash(data.passwordHash, 12, function (err, hash) {
             const newObject = {
