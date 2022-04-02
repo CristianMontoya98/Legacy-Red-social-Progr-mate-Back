@@ -1,1 +1,2 @@
-DELETE http://localhost:3000/api/users/6246818b262c6d129c26b615
+DELETE http://localhost:3001/api/likes
+Content-Type: application/json

@@ -1,12 +1,20 @@
-POST http://165.227.97.133/api/login
+POST http://localhost:3001/api/users
 Content-Type: application/json
 
-{
-  "email":"pope@gmail.com",
-  "passwordHash":"666"
+  {
+      
+      "firstName": "María",
+        "middleName": "José",
+        "lastName": "Jadnat",
+        "secondSurname": "Pérez",
+        "email": "mjalba458@gmail.com",
+        "passwordHash": "mjadnat2022",
+        "contactNumber": "3183670857",
+        "rol": "0",
+        "program": "programate",
+        "cohorte": "62320a5653cd2c2310701adb",
+        "state": "true"
   }
-
-
 ###
 POST http://localhost:3000/api/likes
 Content-Type: application/json
